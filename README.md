@@ -1,51 +1,70 @@
 # Assignment-Test-For-AI-ML
-# Gen-AI MongoDB Query System using Offline LLM
+# Gen-AI MongoDB Query System (Offline LLM)
 
-This project is a Gen-AI assignment that demonstrates how to build an automated data query and retrieval system using:
-- An offline LLM (CodeLLaMA)
-- MongoDB
-- Python
-- CSV file data
-
-It allows natural language questions about CSV data to be dynamically converted into MongoDB queries, executed, and either displayed or saved.
+This project demonstrates an end-to-end automated data query and retrieval system using:
+- ✅ Offline LLM (CodeLLaMA)
+- ✅ MongoDB
+- ✅ CSV data
+- ✅ Python
 
 ---
 
 ## 📦 Features
 
-✅ Load CSV into MongoDB  
-✅ Generate MongoDB queries using an offline LLM  
-✅ Display or save results to CSV  
-✅ Store all generated queries in a log file  
-✅ Built-in error handling and flexibility
+- Convert natural language questions into MongoDB queries using an LLM
+- Load and store CSV data in MongoDB
+- Execute dynamic queries generated from user input
+- Display or export query results as CSV
+- Log all queries into a text file
 
 ---
 
 ## 🛠 Setup Instructions
 
-### 1. Clone the Repository or Prepare Files
+### 1. Clone or Download the Files
 
-Ensure you have:
-- `llm_task.py` (main script)
-- `sample_data.csv` (your dataset)
+Make sure you have:
+- `genai_query_system.py` (main script)
+- `sample_data.csv`
 
-### 2. Install Requirements
+### 2. Install Dependencies
 
-```bash
 pip install pandas pymongo transformers torch
+```
 
-### Running the App
-To launch the interactive interface:
+### 3. Prepare the MongoDB Server
+
+- Either use a local MongoDB instance
+- Or replace the URI in the script with your MongoDB Atlas connection string
+
+---
+
+## 🚀 How to Run
+
+python genai_query_system.py
+```
+
+Follow the prompts to:
+- Enter a natural language question
+- Choose whether to display or save the results
+
+---
+
+## 🧪 Example Test Cases
+
+1. Find all products with a rating below 4.5 that have more than 200 reviews and are offered by 'Nike' or 'Sony'
+2. Which products in the Electronics category have a rating of 4.5 or higher and are in stock?
+3. List products launched after Jan 1, 2022, in Home & Kitchen or Sports categories with ≥10% discount, sorted by price descending
+
+---
+
+## 📂 Output
+
+- test_case1.csv
+- test_case2.csv
+- test_case3.csv
+- Queries_generated.txt (logs all questions and generated queries)
+
+---
 
 
-python llm_task.py
-
-Then follow on-screen prompts:
-
-Enter a question about your dataset.
-
-Choose whether to display or save the result.
-
-Outputs are saved as test_caseX.csv files.
-
-Generated queries are saved in Queries_generated.txt.
